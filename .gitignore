@@ -1,0 +1,17 @@
+# Ignore compiled binaries and build artifacts
+**/myexe
+**/*.o
+**/*.out
+a.out
+build/
+bin/
+*.exe
+
+# macOS
+.DS_Store
+
+# Editor files
+*.swp
+*.swo
+*.idea/
+*.vscode/
