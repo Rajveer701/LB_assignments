@@ -9,7 +9,6 @@ void Table(int iNo){
     for(iCnt=1;iCnt<=10;iCnt++){
         printf("%d\t",iCnt*iNo);
     }
-    
 }
 
 int main(){
