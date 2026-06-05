@@ -26,7 +26,7 @@ int main(){
     scanf("%d",&iValue);
 
     iRet = CountTwo(iValue);
-    printf("%d",iRet);
+    printf("%d\n",iRet);
 
     return 0;
 }
