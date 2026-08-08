@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.*;
 
-class AddFileNames{
+class AddFiles{
     public static void main(String args[]) throws Exception
     {
         Scanner sobj = new Scanner(System.in);
@@ -14,6 +14,8 @@ class AddFileNames{
 
         File fobj = new File(DirectoryName);
 
+        int iRet = 0;
+
         if(fobj.exists() && fobj.isDirectory()){
             File arr[] = fobj.listFiles();
 
@@ -21,7 +23,19 @@ class AddFileNames{
 
             for(int i=0;i<arr.length;i++){
                 if(arr[i].isFile()){
-                    fwobj.write(arr[i].getName() + "\n");
+                    fwobj.write("File Name : " + arr[i].getName() + "\n");
+                    fwobj.write("File Size : " + arr[i].length() + "\n");
+
+                    FileReader frobj = new FileReader(arr[i]);
+
+                    char Buffer[] = new char[1024];
+
+                    while((iRet = frobj.read(Buffer)) != -1){
+                        fwobj.write(Buffer,0,iRet);
+                    }
+                    fwobj.write("\n\n");
+
+                    frobj.close();
                 }
             }
             fwobj.close();
